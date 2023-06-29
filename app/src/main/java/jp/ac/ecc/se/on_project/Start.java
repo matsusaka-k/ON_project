@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Start extends AppCompatActivity {
 
@@ -39,6 +40,14 @@ public class Start extends AppCompatActivity {
                         startActivity(intent); //finish();でActivityの表示終了
                     }
                 }, 2000); // 遅らせたい時間(ミリ秒)
+            }else {
+                Background.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplication(), Signup.class);
+                        startActivity(intent); //finish();でActivityの表示終了
+                    }
+                });
             }
         }
 }

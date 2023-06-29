@@ -44,7 +44,7 @@
         android:id="@+id/screentap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="200dp"
         android:fontFamily="@font/mobo"
         android:text="画面をタップ"
         android:textColor="#F3EAEA"
