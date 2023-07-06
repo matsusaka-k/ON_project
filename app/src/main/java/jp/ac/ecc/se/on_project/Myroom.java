@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Myroom extends AppCompatActivity {
     int menuNum = 0;
 
@@ -22,7 +24,7 @@ public class Myroom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myroom);
 
-        //ログインユーザーのユーザーIDをログイン画面から取得
+        //ログインユーザーのユーザーID,パスワードをプリファレンスから取得
 
         //変数の初期化
         ImageView shop = findViewById(R.id.shop_icon);
@@ -31,6 +33,9 @@ public class Myroom extends AppCompatActivity {
         ImageView recoad = findViewById(R.id.recoad_icon); //プロトタイプ版なし
         ImageView setting = findViewById(R.id.setting_icon); //プロトタイプ版なし
         RecyclerView itemlist = findViewById(R.id.itemlist);
+
+        // RecyclerViewに設定するリストを作成
+
 
         //itemlistのAdapter
 //

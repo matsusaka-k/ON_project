@@ -4,15 +4,17 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+//絶対に触らないこと!!!
+
 public class TestOpenHelper extends SQLiteOpenHelper {
     // データーベースのバージョン
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 10;
     // データーベース名
     private static final String DATABASE_NAME = "ON_DB.db";
 
     //各テーブル情報を変数に格納
     private static final String UserInfo_Table =
-            "CREATE TABLE USERINFO ( USER_ID VARCHAR(10)," +
+            "CREATE TABLE USERINFO ( USER_ID VARCHAR(20)," +
                     "PASSWORD VARCHAR(14)," +
                     "USER_NAME VARCHAR(10)," +
                     "IMAGE VARCHAR(255)," +
@@ -20,25 +22,24 @@ public class TestOpenHelper extends SQLiteOpenHelper {
                     "PRIMARY KEY(USER_ID) )";
 
     private static final String Friends_Table =
-            "CREATE TABLE FRIENDS ( USER_ID VARCHAR(10)," +
+            "CREATE TABLE FRIENDS ( USER_ID VARCHAR(20)," +
                     "FRIEND_ID	VARCHAR(10)," +
                     "PRIMARY KEY(USER_ID,FRIEND_ID)," +
                     "FOREIGN KEY (USER_ID) REFERENCES USERINFO(USER_ID)," +
                     "FOREIGN KEY (FRIEND_ID) REFERENCES USERINFO(USER_ID) )";
 
     private static final String Item_Table =
-            "CREATE TABLE ITEM ( ITEM_ID INT(10) PRIMARY KEY AUTOINCREMENT," +
-                    "FRIEND_ID	VARCHAR(10)," +
+            "CREATE TABLE ITEM ( ITEM_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "INAME VARCHAR(20)," +
                     "PRICE INT(10) NOT NULL," +
-                    "CATEGORY INT(1) NOT NULL," +
+                    "TYPE INT(1) NOT NULL," +
+                    "CATEGORY INT(2) NOT NULL," +
                     "IMAGE INT(255) NOT NULL," +
                     "UNIQUE(INAME) )";
 
     private static final String UserItem_Table =
-            "CREATE TABLE USERITEM ( USER_ID VARCHAR(10)," +
+            "CREATE TABLE USERITEM ( USER_ID VARCHAR(20)," +
                     "ITEM_ID INT(10)," +
-                    "PRIMARY KEY(USER_ID)," +
                     "FOREIGN KEY (USER_ID) REFERENCES USERINFO(USER_ID)," +
                     "FOREIGN KEY (ITEM_ID) REFERENCES ITEM(ITEM_ID) )";
 
@@ -112,11 +113,13 @@ public class TestOpenHelper extends SQLiteOpenHelper {
 
         // データ登録
         //Item
-        db.execSQL("INSERT INTO item (INAME,PRICE,CATEGORY,IMAGE) VALUES ('カラーボックス',100,1,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,CATEGORY,IMAGE) VALUES ('うすがたテレビ',1000,1,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,CATEGORY,IMAGE) VALUES ('はながらのシャツ',200,2,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,CATEGORY,IMAGE) VALUES ('きいろのパンツ',100,2,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,CATEGORY,IMAGE) VALUES ('オシャレなめがね',100,2,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('カラーボックス',100,1,4,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('うすがたテレビ',1000,1,8,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('はながらのシャツ',200,1,1,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('きいろのパンツ',100,1,2,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('オシャレなハット',100,1,3,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('ベージュのカーペット',300,1,5,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('あおいろのソファ',400,1,2,'');");
     }
 
     /***
