@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".redecorate">
+
+  <ImageView
+      android:id="@+id/background"
+      android:layout_width="423dp"
+      android:layout_height="933dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/night" />
+
+  <ImageView
+      android:id="@+id/shopIcon"
+      android:layout_width="124dp"
+      android:layout_height="118dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/shop" />
+
+  <ImageView
+      android:id="@+id/changeClothes"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/shopIcon" />
+
+  <ImageView
+      android:id="@+id/back"
+      android:layout_width="101dp"
+      android:layout_height="131dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/back" />
+
+  <ImageView
+      android:id="@+id/floor"
+      android:layout_width="415dp"
+      android:layout_height="383dp"
+      android:layout_marginTop="250dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/background"
+      app:srcCompat="@drawable/floor_wood" />
+
+  <ListView
+      android:id="@+id/itemlist"
+      android:layout_width="409dp"
+      android:layout_height="286dp"
+      android:background="#72CEE3E2"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <ImageView
+      android:id="@+id/AllDelete"
+      android:layout_width="75dp"
+      android:layout_height="54dp"
+      android:background="#8F5151"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/shopIcon"
+      tools:srcCompat="@tools:sample/avatars" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/positions"
+      android:layout_width="403dp"
+      android:layout_height="431dp"
+      android:layout_marginTop="100dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/plant_position"
+        android:layout_width="92dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/carpet_position"
+        android:layout_width="189dp"
+        android:layout_height="152dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/sofa_position"
+        android:layout_width="180dp"
+        android:layout_height="202dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/desk_position"
+        android:layout_width="235dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/accessory_position"
+        android:layout_width="105dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/TV_position"
+        android:layout_width="170dp"
+        android:layout_height="161dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:layout_editor_absoluteX="-65dp"
+      tools:layout_editor_absoluteY="54dp">
+
+    <ImageView
+        android:id="@+id/eraser"
+        android:layout_width="275dp"
+        android:layout_height="296dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="62dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/eraser" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

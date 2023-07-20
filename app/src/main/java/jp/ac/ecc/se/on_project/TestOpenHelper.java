@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class TestOpenHelper extends SQLiteOpenHelper {
     // データーベースのバージョン
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 12;
     // データーベース名
     private static final String DATABASE_NAME = "ON_DB.db";
 
@@ -34,7 +34,7 @@ public class TestOpenHelper extends SQLiteOpenHelper {
                     "PRICE INT(10) NOT NULL," +
                     "TYPE INT(1) NOT NULL," +
                     "CATEGORY INT(2) NOT NULL," +
-                    "IMAGE INT(255) NOT NULL," +
+                    "IMAGE VARCHAR(255)," +
                     "UNIQUE(INAME) )";
 
     private static final String UserItem_Table =
@@ -113,13 +113,18 @@ public class TestOpenHelper extends SQLiteOpenHelper {
 
         // データ登録
         //Item
-        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('カラーボックス',100,1,4,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('うすがたテレビ',1000,1,8,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('はながらのシャツ',200,1,1,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('きいろのパンツ',100,1,2,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('オシャレなハット',100,1,3,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('ベージュのカーペット',300,1,5,'');");
-        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('あおいろのソファ',400,1,2,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('ブラウンかんテレビ',800,1,8,'tv_crt');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('ウッドなロ―テーブル',500,1,1,'desk_wood');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('リッチないす',1200,1,2,'sofa_red');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('オシャレなめがね',500,2,2,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('アジアンタムのうえきばち',560,1,7,'flower_pot');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('ベージュのカーペット',450,1,5,'carpet_gray');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('あおいろのソファ',620,1,2,'sofa_blue');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('みどりのリボン',120,2,1,'');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('ピザなカーペット',720,1,5,'carpet_pizza');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('ほしのカーペット',777,1,5,'carpet_star');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('みどりボーダーなカーペット',400,1,5,'carpet_green');");
+        db.execSQL("INSERT INTO item (INAME,PRICE,TYPE,CATEGORY,IMAGE) VALUES ('くまのぬいぐるみ',700,1,6,'bear_toy');");
     }
 
     /***
@@ -138,6 +143,10 @@ public class TestOpenHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO useritem VALUES ('haru123', '3');");
         db.execSQL("INSERT INTO useritem VALUES ('haru123', '4');");
         db.execSQL("INSERT INTO useritem VALUES ('haru123', '5');");
+        db.execSQL("INSERT INTO useritem VALUES ('haru123', '6');");
+        db.execSQL("INSERT INTO useritem VALUES ('haru123', '7');");
+        db.execSQL("INSERT INTO useritem VALUES ('haru123', '8');");
+
         db.execSQL("INSERT INTO useritem VALUES ('natsu123', '1');");
         db.execSQL("INSERT INTO useritem VALUES ('natsu123', '3');");
         db.execSQL("INSERT INTO useritem VALUES ('natsu123', '2');");
