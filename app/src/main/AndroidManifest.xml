@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:allowBackup="true"
@@ -11,23 +11,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ON_project"
-        tools:targetApi="33">
+        tools:targetApi="33" >
         <activity
-            android:name=".FriendAdd"
-            android:exported="true">
+            android:name=".redecorate"
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".changeClothes"
+            android:exported="true" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".FriendAdd"
+            android:exported="true" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+<!--             <intent-filter> -->
+<!--             <action android:name="android.intent.action.MAIN" /> -->
+
+
+<!--             <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
         </activity>
         <activity
             android:name=".Shop"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -40,7 +66,7 @@
         </activity>
         <activity
             android:name=".MatchingAfter"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -53,7 +79,7 @@
         </activity>
         <activity
             android:name=".MatchingBefore"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -66,7 +92,7 @@
         </activity>
         <activity
             android:name=".TestOpenHelper"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -79,7 +105,7 @@
         </activity>
         <activity
             android:name=".TestDBconnect"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -92,46 +118,47 @@
         </activity>
         <activity
             android:name=".Signup"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
         <activity
             android:name=".Start"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
         </activity>
         <activity
             android:name=".Myroom"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->

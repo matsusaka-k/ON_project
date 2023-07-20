@@ -17,6 +17,8 @@ public class TestDBconnect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_dbconnect);
 
+        //サンプル用
+
         //変数の初期化
         TextView sampletext = findViewById(R.id.sampletext);
         Button searchbutton = findViewById(R.id.searchbutton);

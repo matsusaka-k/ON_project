@@ -22,7 +22,7 @@ public class Start extends AppCompatActivity {
             ImageView Background = findViewById(R.id.background);
             ImageView AppTitle = findViewById(R.id.zzzfrienz);
             TextView ConceptText = findViewById(R.id.conceptText); //コンセプトの一文「睡眠時間で繋がる遊ぶ」
-            TextView ScreenTap = findViewById(R.id.screentap); //「画面をタップ」
+            ImageView ScreenTap = findViewById(R.id.start_tap); //「画面をタップ」
 
             //プリファレンスの変数にuser_idの値が入っているか確認(サインアップ前の初期値null)
             SharedPreferences sp = getSharedPreferences("LogIn",MODE_PRIVATE);

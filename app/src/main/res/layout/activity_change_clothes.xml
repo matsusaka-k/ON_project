@@ -6,4 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".changeClothes">
 
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="427dp"
+        android:layout_height="926dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/night" />
+
+    <ImageView
+        android:id="@+id/charaModel"
+        android:layout_width="351dp"
+        android:layout_height="540dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/obake_normal" />
+
+    <ListView
+        android:id="@+id/itemlist"
+        android:layout_width="416dp"
+        android:layout_height="316dp"
+        android:background="#317E8BCF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/TakeOffHat"
+        android:layout_width="114dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#C88787"
+        app:layout_constraintBottom_toTopOf="@+id/itemlist"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/goFurniture"
+        android:layout_width="95dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/shop" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="131dp"
+        android:layout_height="115dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back"
+        app:srcCompat="@drawable/back" />
 </androidx.constraintlayout.widget.ConstraintLayout>
