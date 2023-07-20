@@ -2,22 +2,21 @@ package jp.ac.ecc.se.on_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DateFormat;
-import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MatchingBefore extends AppCompatActivity {
-
 
     public TextView timer;
     public TextView message;
@@ -32,7 +31,8 @@ public class MatchingBefore extends AppCompatActivity {
     public boolean isRunning;
     public Integer sleepTimeSec;
     public Integer wakeTimeSec;
-
+    public ImageView myView;
+    public ImageView userView;
 
 
     @Override
@@ -52,9 +52,27 @@ public class MatchingBefore extends AppCompatActivity {
         sleepButton = findViewById(R.id.sleep);
         // 起きた時に押してもらうボタン
         wakeButton = findViewById(R.id.wake);
+        // 自分のアイコン
+        myView = findViewById(R.id.myView);
+        // 相手のアイコン
+        userView = findViewById(R.id.userView);
 
+        //DBに接続してマッチングした相手の情報を取ってくる(sample ID:aki123)
+        TestOpenHelper helper = new TestOpenHelper(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        String usersql = "SELECT * FROM USERINFO WHERE USER_ID =" + "'haru123'";
+        Cursor cursor = db.rawQuery(usersql,null);
 
-
+        if(cursor.moveToFirst()){
+            do{
+                //DBから取得したデータを各変数に格納
+                userid.setText(cursor.getString(0));
+                username.setText(cursor.getString(2));
+                //message.setText(cursor.getString(5));
+                //userView
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
 
 
         handler = new Handler();
@@ -63,53 +81,38 @@ public class MatchingBefore extends AppCompatActivity {
             public void run() {
                 // 　　　　　　　　ある時点の時間をミリ秒で取得
                 //             画面開いた時間　　　　　　　　　　　　　経過時刻
-//                timeInMillis = System.currentTimeMillis() - startTime;
-//                updateTimer();
-//                //
-//                handler.postDelayed(this, 1000);
+                timeInMillis = System.currentTimeMillis() - startTime;
+                updateTimer();
+                //
+                handler.postDelayed(this, 1000);
             }
         };
-
-
 
 
         sleepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // サンプル
-                sleepTimeSec = 5400;
                 // 寝た時間
-//                sleepTimeSec = getSec();
-//                //sleepTimer();
-//                sleepTimeSec = 28800;
-//                wakeTimeSec = 5400;
-//                long l = (wakeTimeSec - sleepTimeSec);
-//                long p = l / 3600;
-//                System.out.println("差分：" + p);
+                sleepTimeSec = getSec();
+                //sleepTimer();
+                sleepTimeSec = 28800;
+                wakeTimeSec = 5400;
+                long l = (wakeTimeSec - sleepTimeSec);
+                long p = l / 3600;
+                System.out.println("差分：" + p);
             }
         });
 
         wakeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // サンプル
-                wakeTimeSec = 28800;
                 // 起きた時間
-//                wakeTimeSec = getSec();
+                wakeTimeSec = getSec();
                 // 差分計算
                 long data = wakeTimeSec - sleepTimeSec;
                 updateTimer();
                 System.out.println("差分：" + data + "秒");
 
-                // トースト
-//                String toastMessage = "トースト";
-//                // lambda式
-//                wakeButton.setOnClickListener( v -> {
-//                    Toast toast = Toast.makeText(MatchingBefore.this, toastMessage , Toast.LENGTH_LONG);
-//                    toast.show();
-//                });
-
-//
 ////                wakeTimer();
                 // データごと遷移
                 Intent intent = new Intent(getApplication(), MatchingAfter.class);
@@ -154,11 +157,4 @@ public class MatchingBefore extends AppCompatActivity {
         String timeFormatted = String.format("%02d:%02d:%02d", hours, minutes, seconds);
         timer.setText(timeFormatted);
     }
-
-
-//    ・DB接続(マッチング相手の情報)
-//    ・↑のやつも画面遷移時
-
-
-
 }

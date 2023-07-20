@@ -3,6 +3,8 @@ package jp.ac.ecc.se.on_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +26,22 @@ public class MatchingBefore2 extends AppCompatActivity {
 
         Button sleepButton = findViewById(R.id.Sleep);
 
+        //DBに接続してマッチングした相手の情報を取ってくる(sample ID:aki123)
+        TestOpenHelper helper = new TestOpenHelper(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        String usersql = "SELECT * FROM USERINFO WHERE USER_ID =" + "'haru123'";
+        Cursor cursor = db.rawQuery(usersql,null);
+
+//        if(cursor.moveToFirst()){
+//            do{
+//                //DBから取得したデータを各変数に格納
+//                MatchingUserID.setText(cursor.getString(0));
+//                MatchingUserName.setText(cursor.getString(2));
+//                //MatchingUsercomment.setText(cursor.getString(5));
+//                //MatchingUserView
+//            }while(cursor.moveToNext());
+//        }
+//        cursor.close();
 
 
         sleepButton.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +54,7 @@ public class MatchingBefore2 extends AppCompatActivity {
                     sleepFlg=false;
                 }else{
                     //二回目の場合
-                    stopTime = System.currentTimeMillis() + 10000;
+                    stopTime = System.currentTimeMillis();
                     long time = stopTime-startTime;
                     System.out.println("timeは"+time);
 
