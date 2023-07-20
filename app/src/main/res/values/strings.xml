@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ON_project</string>
+    <string name="userid">userid</string>
+    <string name="sleep">sleep</string>
+    <string name="wake">wake</string>
+    <string name="username">username</string>
 </resources>

@@ -1,21 +1,18 @@
 package jp.ac.ecc.se.on_project;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
-public class Signup extends AppCompatActivity{
+public class Signup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +53,15 @@ public class Signup extends AppCompatActivity{
                 int errFlg = 0;
 
                 //ユーザidの確認(20文字以内 半角英数字)
-                if(!confirm_userid.matches("^[A-Za-z0-9]+$")){
+                if (!confirm_userid.matches("^[A-Za-z0-9]+$")) {
                     err_userid.setText("半角英数字で入力してください");
                     errFlg++;
                 }
 
-                if(!confirm_userid.matches("\\{6,20\\}")) {
-                    if(err_userid.getText().toString()!=null){
+                if (!confirm_userid.matches("\\{6,20\\}")) {
+                    if (err_userid.getText().toString() != null) {
                         err_userid.setText("半角英数字,6文字以上20文字以内で入力してください");
-                    }else{
+                    } else {
                         errFlg++;
                         err_userid.setText("6文字以上20文字以内で入力してください");
                     }
@@ -73,14 +70,14 @@ public class Signup extends AppCompatActivity{
                 //パスワードの確認(８文字以上１４文字の半角英数字)
                 //半角英数字ではない時
                 if (!comfirm_password.matches("^[A-Za-z0-9]+$")) {
-                   err_pass.setText("半角英数字で入力してください");
-                   errFlg++;
+                    err_pass.setText("半角英数字で入力してください");
+                    errFlg++;
                 }
                 //8文字以上14文字以内ではないとき
                 if (!comfirm_password.matches("\\{8,14\\}")) {
-                    if(err_pass.getText().toString()!=null){
+                    if (err_pass.getText().toString() != null) {
                         err_userid.setText("半角英数字,8文字以上14文字以内で入力してください");
-                    }else{
+                    } else {
                         errFlg++;
                         err_userid.setText("8文字以上14文字以内で入力してください");
                     }
@@ -100,7 +97,7 @@ public class Signup extends AppCompatActivity{
                 }
 
                 //全て正しい場合、user_idとパスワードをプリファレンス/DBに登録
-                if(errFlg == 0){
+                if (errFlg == 0) {
                     //プリファレンスに登録(user_id)
                     SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = pref.edit();
@@ -110,13 +107,9 @@ public class Signup extends AppCompatActivity{
                     //DBに登録
                     TestOpenHelper helper = new TestOpenHelper(getApplicationContext());
                     SQLiteDatabase db = helper.getReadableDatabase();
-                    String sql = "INSERT INTO USERINFO VALUES ("+confirm_userid+","+")";
+                    String sql = "INSERT INTO USERINFO VALUES (" + confirm_userid + "," + ")";
 
                 }
-
-                //エラーメッセージを消す
-
-
             }
         });
     }

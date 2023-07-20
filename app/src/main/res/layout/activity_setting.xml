@@ -25,7 +25,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="600dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/usrname"
+        android:text="@string/username"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
